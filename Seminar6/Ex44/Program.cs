@@ -4,8 +4,7 @@
 
 int[] arr = GetRandomArray(10);
 PrintArray(arr);
-//PrintArray(arr);
-
+PrintArray(CopyArray(arr));
 
 int[] CopyArray(int[] arr)
 {
