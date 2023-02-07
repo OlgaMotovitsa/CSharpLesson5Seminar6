@@ -10,8 +10,6 @@
 var arr = Generate2DArray(3, 4);
 Print2DArray(arr);
 
-
-
 double[,] Generate2DArray(int m, int n)
 {
     double[,] result = new double[m, n];
@@ -20,8 +18,9 @@ double[,] Generate2DArray(int m, int n)
     {
         for(int j = 0; j < result.GetLength(1); j++)
         {
+                      // = new Random().Next(-100, 101)/ 10.0;
 
-            result[i, j] = new Random().Next(-100, 100)/ 10.0;
+            result[i, j] = Math.Round (new Random().Next(-100, 101)* 0.1 , 1);                            
         }
     }
     return result;
@@ -32,9 +31,8 @@ static void Print2DArray(double[,] arr)
     {
         for(int j = 0; j < arr.GetLength(1); j++)
         {
-            System.Console.Write($"{arr[i, j]} ");
+            System.Console.Write(arr[i, j] + "\t" );
         }
         System.Console.WriteLine();
     }
-
 }
