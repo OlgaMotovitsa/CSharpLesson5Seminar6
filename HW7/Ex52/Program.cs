@@ -10,7 +10,6 @@
 
 Console.WriteLine("введите количество строк");
 int n = Convert.ToInt32(Console.ReadLine());
-
 Console.WriteLine("введите количество столбцов");
 int m = Convert.ToInt32(Console.ReadLine());
 
@@ -18,21 +17,24 @@ int[,] arr = new int[n, m];
 
 Generate2DArray(arr);
 PrintArray(arr);
-GetResult(arr);
+Console.Write("Среднее арифметическое каджого столбца : ");
+System.Console.WriteLine();
+GetAverageResult(arr);
 
-void GetResult(int[,] numbers)
+
+void GetAverageResult(int[,] numbers)
 {
 
     for (int j = 0; j < numbers.GetLength(1); j++)
     {
-        double avarage = 0;
+        double result = 0;
 
         for (int i = 0; i < numbers.GetLength(0); i++)
         {
-            avarage = (avarage + numbers[i, j]);
+            result = (result + numbers[i, j]);
         }
-        avarage = avarage / n;
-        Console.Write(avarage + "; ");
+        result = result / n;
+        Console.Write(result + "; ");
     }
 }
 
